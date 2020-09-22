@@ -1,4 +1,8 @@
 module.exports = {
+  output: {
+    path: __dirname,
+    filename: './public/dist/main.js'
+  },
   module: {
     rules: [
       {

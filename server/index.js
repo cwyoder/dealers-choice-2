@@ -12,8 +12,10 @@ app.use(volleyball);
 app.use(require('express').json());
 app.use(express.urlencoded({extended: true}))
 
-//static path
+//static paths
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
 
 //api routes
 app.use('/api', require('./api'));
@@ -22,7 +24,7 @@ app.use('/api', require('./api'));
 app.use((req, res, next) => {
   const error = Error(`Page not found(${req.url})`);
   error.status = 404;
-  next(error);
+    next(error);
 })
 
 //500 handler
