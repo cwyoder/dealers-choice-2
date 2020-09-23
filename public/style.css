@@ -1,0 +1,113 @@
+body {
+  font-family: 'Verdana', Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: lightgrey;
+}
+
+header {
+  background: dimgray;
+  color: white;
+  padding: 0.5rem 2rem;
+  box-shadow: 0px 5px 8px black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0 5rem 0 0;
+}
+
+header ul {
+  list-style: none;
+  color: white;
+  display: flex;
+  padding: 0;
+  width: 50%;
+  justify-content: space-between;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#totalprice {
+  width: 50%;
+  margin: 2rem auto;
+  border: 1px solid dimgray;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.item-list {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.item-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid dimgray;
+  background: white;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.item-list a {
+  width: 80%;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item-list a:hover {
+  text-decoration: underline;
+}
+
+.item-list a p {
+  margin: 0.2rem 0;
+}
+
+.item-list a p:last-child {
+  font-weight: normal;
+  font-style: italic;
+  width: 100%;
+}
+
+.form {
+  width: 65%;
+  margin: 0 auto;
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid dimgray;
+  box-sizing: border-box;
+  margin: 0.5rem 0 2rem 0;
+}
+
+textarea {
+  width: 100%;
+  margin: 0.5rem 0 2rem 0;
+  padding: 12px 20px;
+  border: 1px solid dimgray;
+  box-sizing: border-box;
+}
+

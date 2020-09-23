@@ -9,7 +9,6 @@ import SingleItem from './SingleItem';
 import CreateItem from './CreateItem';
 
 
-
 class _App extends React.Component{
   constructor(){
     super();
@@ -21,7 +20,7 @@ class _App extends React.Component{
     return(
       <Router>
         <div id='main'>
-          <div id='header'>
+          <header>
             <h1>Shopping List</h1>
             <ul className='links'>
               <li>
@@ -31,14 +30,17 @@ class _App extends React.Component{
                 <Link to ='/items'>All items</Link>
               </li>
               <li>
-                <Link to ='/items/create'>Add item to list</Link>
+                <Link to ='/create'>Add item to list</Link>
               </li>
             </ul>
-          </div>
+          </header>
           <div id='content'>
-            <Route path='/items' exact component= { ItemList }/>
-            <Route path='/items/:id' component= { SingleItem }/>
-            <Route path='/create' component= { CreateItem }/>
+            <div id='totalprice'>
+              <p>Total price of items on list: ${this.props.total}</p>
+            </div>
+            <Route path='/items' exact component={ ItemList }/>
+            <Route path='/create' exact component={ CreateItem }/>
+            <Route path='/items/:id' component={ SingleItem }/>
           </div>
         </div>
       </Router>
@@ -47,15 +49,16 @@ class _App extends React.Component{
 }
 
 const mapStateToProps = (state) => {
+  const totalPrice = state.reduce((acc, item) => acc + item.price, 0);
   return {
-
+    total: totalPrice
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     load: () => {
-      console.log('load!');
+      dispatch(getItems());
     }
   }
 }
