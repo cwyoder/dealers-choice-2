@@ -12,9 +12,8 @@ app.use(volleyball);
 app.use(require('express').json());
 app.use(express.urlencoded({extended: true}))
 
-//static paths
-app.use(express.static(path.join(__dirname, '..', 'public')));
-
+//static path
+app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
 //api routes
 app.use('/api', require('./api'));
